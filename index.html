@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSU Canvas Analytics</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oxygen" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+  </head>
+  <body>
+
+    <div class="canv">
+
+<!-- HEADER -->
+      <header class="canv-header">
+        <h1>Canvas Analytics Dashboard</h1>
+        <i class="material-icons header-icon">trending_up</i>
+      </header>
+<!-- SIDEBAR -->
+      <aside class="canv-sidebar">
+        <a href="pages/profile.html">
+          <section class="profile ">
+            <svg height="90" width="90">
+              <circle class="profile-circle"/>
+            </svg>
+            <p class="profile-name">MY PROFILE</p>
+          </section>
+        </a>
+
+        <section class="item1 navitem"  href="#drop1-1">
+          <i class="nav-icons material-icons">home</i>
+          Home
+        </section>
+        <ul id="drop1-1" class="dropmenu">
+          <li class="drop-item">Thing to do</li>
+          <li class="drop-item ">Other thing</li>
+          <li class="drop-item">And another</li>
+        </ul>
+
+
+        <section class="item2 navitem" href="#drop1-2">
+          <i class="nav-icons material-icons">compare_arrows</i>
+          Change Data
+        </section>
+        <ul id="drop1-2" class="dropmenu">
+          <li class="drop-item">Thing to do</li>
+          <li class="drop-item ">Other thing</li>
+          <li class="drop-item">And another</li>
+        </ul>
+
+
+        <section class="item2 navitem" href="#drop1-3">
+          <i class="nav-icons material-icons">timeline</i>
+          Other Thing
+        </section>
+        <ul id="drop1-3" class="dropmenu">
+          <li class="drop-item">Thing to do</li>
+          <li class="drop-item ">Other thing</li>
+          <li class="drop-item">And another</li>
+        </ul>
+
+
+        <section class="item2 navitem" href="#drop1-4">
+          <i class="nav-icons material-icons">chat_bubble</i>
+          Stuff
+        </section>
+        <ul id="drop1-4" class="dropmenu" href="#drop1-2">
+          <li class="drop-item">Thing to do</li>
+          <li class="drop-item ">Other thing</li>
+          <li class="drop-item">And another</li>
+        </ul>
+
+        <section class="item2 navitem" href="#drop1-5">
+          <i class="nav-icons material-icons">settings</i>
+          Settings
+        </section>
+        <ul id="drop1-5" class="dropmenu">
+          <li class="drop-item">Thing to do</li>
+          <li class="drop-item ">Other thing</li>
+          <li class="drop-item">And another</li>
+        </ul>
+
+      </aside>
+<!-- MAIN -->
+      <main class="canv-main">
+        <div class="main-line1-1 graph-square"> <!-- TODO: LOOK INTO OTHER TAGS BESIDES DIVS HER -->
+          <div class="graph-content">
+            <div class="graph-menu">
+              <ul class="graph-options">
+                <li class="gr-option">LIFETIME</li>
+                <li class="gr-option">MONTH</li>
+                <li class="gr-option">WEEK</li>
+                <li class="gr-option">YESTERDAY</li>
+                <li class="gr-option">NOW</li>
+              </ul>
+            </div>
+          </div>
+          <div id="example1" class="graph-container">
+            <div  class="actual-graph">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="main-line1-2 graph-square graph-border-right">
+          <!--___________________-->
+          <div class="graph-content">
+            <div class="graph-menu">
+              <ul class="graph-options">
+                <li class="gr-option">LIFETIME</li>
+                <li class="gr-option">MONTH</li>
+                <li class="gr-option">WEEK</li>
+                <li class="gr-option">YESTERDAY</li>
+                <li class="gr-option">NOW</li>
+              </ul>
+            </div>
+          </div>
+          <div id="example2" class="graph-container">
+            <div  class="actual-graph">
+
+            </div>
+          </div>
+        </div>
+      </main>
+<!-- FOOTER -->
+      <footer class="canv-footer">
+
+      </footer>
+    </div>
+  </body>
+
+
+  <script src="graph/testGraph1.js" ></script>
+  <script src="graph/testGraph2.js" ></script>
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="app.js"></script>
+
+</html>

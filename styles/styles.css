@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f6f6;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-size: 2vw;
+  font-family: "Open Sans", sans-serif; }
+
+h1 {
+  margin: 0;
+  font-size: 2rem; }
+
+li {
+  list-style-type: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer; }
+
+.material-icons {
+  padding: 0vh 2vh 0vh 2vh;
+  font-size: 36px; }
+
+.canv-header {
+  grid-area: head; }
+
+.canv-sidebar {
+  grid-area: sidebar; }
+
+.canv-main {
+  grid-area: main; }
+
+.canv-footer {
+  grid-area: footer; }
+
+.main-line1-1 {
+  grid-area: line1_1; }
+
+.main-line1-2 {
+  grid-area: line1_2; }
+
+.canv {
+  display: grid;
+  grid-template-areas: "head" "sidebar" "main" "footer"; }
+
+.canv-header {
+  display: flex;
+  font-family: "Oxygen", sans-serif;
+  height: 16vh;
+  letter-spacing: 1.5px;
+  background-color: #474d57;
+  color: #f7f6f6;
+  padding: 2vh 2vh 2vh 2vh;
+  align-items: center;
+  padding-left: 4vw;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  z-index: 2; }
+
+.header-icon {
+  font-size: 56px; }
+
+.canv-sidebar {
+  height: 100vh;
+  font-size: 1rem;
+  background-color: #1f99ab;
+  position: sticky;
+  top: 0; }
+
+.canv-main {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f7f6f6;
+  z-index: 0;
+  display: grid;
+  flex-direction: column;
+  grid-template-areas: "line1_1 line1_2"; }
+
+.graph-pad {
+  padding: 2vh 2vh 2vh 2vh; }
+
+.graph-content {
+  padding: 2vh 2vh 2vh 2vh; }
+
+.graph-square {
+  border-bottom: 0.5px solid #1f99ab; }
+
+.graph-square:hover {
+  background-color: #f0f0f0; }
+
+.graph-border-right {
+  position: relative;
+  height: auto; }
+
+.graph-border-right:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  top: 10%;
+  border-left: 1px solid #1f99ab; }
+
+.canv-footer {
+  font-family: "Open Sans", sans-serif;
+  height: 10vh;
+  background-color: #f7f6f6;
+  padding: 2vh 2vh 2vh 2vh; }
+
+.navitem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2vh 2vh 2vh 2vh;
+  border-bottom: 0.5px solid #f7f6f6;
+  color: #f7f6f6;
+  transition: all linear 0.15s; }
+
+.profile {
+  height: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 2vh 2vh 2vh;
+  padding-bottom: 0;
+  border-bottom: 1px solid #f7f6f6; }
+
+.profile-circle {
+  cx: 45;
+  cy: 45;
+  r: 40;
+  stroke: black;
+  stroke-width: 1;
+  fill: white; }
+
+.profile-name {
+  margin: 0;
+  color: #f7f6f6; }
+
+.navitem:hover {
+  background-color: #2d9fb1; }
+
+.navitem-hover {
+  background-color: #bac1b8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: #1f99ab; }
+
+.nav-icons {
+  padding: 0vh 2vh 0vh 2vh;
+  font-size: 36px;
+  color: #1f99ab;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #f7f6f6; }
+
+.dropmenu {
+  display: none;
+  padding: 0;
+  margin: 0;
+  color: #474d57;
+  background-color: #f7f6f6; }
+
+.drop-item {
+  font-size: 1rem;
+  padding-left: 2vw;
+  border-bottom: 0.5px solid #bac1b8;
+  padding: 1vh 1vh 1vh 5vh; }
+
+.drop-item:hover {
+  background-color: #e1eef0; }
+
+.no-stroke {
+  -webkit-text-stroke-width: 0px; }
+
+.graph-square {
+  max-width: 40vw;
+  min-width: 40vw; }
+
+.graph-content {
+  display: flex;
+  justify-content: center; }
+
+.graph-options {
+  padding: 0; }
+
+.graph-options li {
+  font-size: 1rem;
+  display: inline;
+  padding: 1vh; }
+
+.gr-option:hover {
+  background-color: #96c6cd; }
+
+.graph-container {
+  position: relative;
+  padding: 2% 2% 50% 5%;
+  height: 0;
+  overflow: hidden;
+  width: 100%; }
+
+.actual-graph {
+  position: absolute;
+  width: 100%;
+  height: auto; }
+
+.no-border {
+  border-left: 0px; }
+
+@media (min-width: 640px) {
+  .canv {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "sidebar head" "sidebar main" "sidebar footer"; } }
+.axis text {
+  font: 26pt sans-serif;
+  font-family: 'Zilla Slab', serif; }
+
+path {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,296 @@
+$primary-main: #1f99ab;
+$secondary-main: #2d9fb1;
+$tertiary-main: #96c6cd;
+$light-main: #e1eef0;
+
+
+$neutral-dark: #474d57;
+$neutral-med: #bac1b8;
+$neutral-lt-med: #f0f0f0;
+$neutral-background: #f7f6f6;
+
+$highlight-main: #d64933;
+$highlight-secondary: #db6d5c;
+
+$muted: #416f60;
+$unmuted: #4b8673;
+
+$header-font: 'Oxygen', sans-serif;
+$main-font: 'Open Sans', sans-serif;
+
+@mixin general-padding() {
+  padding: 2vh 2vh 2vh 2vh;
+}
+@mixin drop-padding() {
+  padding: 1vh 1vh 1vh 5vh;
+}
+@mixin partial-left-border(){
+  &:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    top: 10%;
+    border-left: 1px solid $primary-main;
+  }
+}
+
+//EXAMPLE FOR MIXIN FOR REFERENCE:
+// @mixin border-radius($radius) {
+//   -webkit-border-radius: $radius;
+//      -moz-border-radius: $radius;
+//       -ms-border-radius: $radius;
+//           border-radius: $radius;
+// }
+//
+// .box { @include border-radius(10px); }
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-color: $neutral-background;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-size: 2vw;
+  font-family: $main-font;
+}
+h1{
+  margin: 0;
+  font-size: 2rem;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover
+{
+  text-decoration:none;
+  cursor:pointer;
+}
+.material-icons {
+  padding: 0vh 2vh 0vh 2vh;
+  font-size: 36px;
+}
+
+.canv-header { grid-area: head; }
+.canv-sidebar { grid-area: sidebar; }
+.canv-main { grid-area: main; }
+.canv-footer { grid-area: footer; }
+
+.main-line1-1 {grid-area: line1_1; }
+.main-line1-2 {grid-area: line1_2; }
+
+// STYLEZ:
+.canv {
+  display: grid;
+  grid-template-areas:
+    "head"
+    "sidebar"
+    "main"
+    "footer";
+}
+.canv-header {
+  display: flex;
+  font-family: $header-font;
+  height: 16vh;
+  letter-spacing: 1.5px;
+  background-color: $neutral-dark;
+  color: $neutral-background;
+  @include general-padding();
+  align-items: center;
+  padding-left: 4vw;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  z-index: 2;
+}
+.header-icon {
+  font-size: 56px;
+}
+.canv-sidebar {
+  height: 100vh;
+  font-size: 1rem;
+  background-color: $primary-main;
+  position: sticky;
+  top: 0; //this with "sticky" made the sidebar stick to left w/o messing up grids.
+}
+.canv-main {
+  font-family: $main-font;
+  background-color: $neutral-background;
+  // @include general-padding();
+  // height: 100vh;
+  z-index: 0;
+  display: grid;
+  flex-direction: column;
+  grid-template-areas:
+  "line1_1 line1_2"
+}
+.graph-pad {
+  @include general-padding();
+}
+.graph-content {
+  @include general-padding();
+}
+.graph-square {
+  border-bottom: .5px solid $primary-main;
+  // @include general-padding();
+}
+.graph-square:hover {
+  background-color: $neutral-lt-med;
+}
+.graph-border-right {
+  position: relative;
+  height: auto;
+}
+.graph-border-right {
+  @include partial-left-border();
+}
+.canv-footer {
+  font-family: $main-font;
+  height: 10vh;
+  background-color: $neutral-background;
+  @include general-padding();
+}
+.navitem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @include general-padding();
+  border-bottom: .5px solid $neutral-background;
+  color: $neutral-background;
+  transition: all linear 0.15s;
+}
+.profile {
+  height: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include general-padding();
+  padding-bottom: 0;
+  border-bottom: 1px solid $neutral-background;
+}
+.profile-circle {
+  cx:45;
+  cy:45;
+  r:40;
+  stroke:black;
+  stroke-width:1;
+  fill:white;
+}
+.profile-name {
+  margin: 0;
+  color: $neutral-background;
+}
+.navitem:hover {
+  background-color: $secondary-main;
+}
+.navitem-hover {
+  background-color: $neutral-med;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.9s cubic-bezier(.25,.8,.25,1);
+  color: $primary-main;
+}
+.nav-icons {
+  padding: 0vh 2vh 0vh 2vh;
+  font-size: 36px;
+  color: $primary-main;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $neutral-background;
+}
+.dropmenu {
+  display: none;
+  padding: 0;
+  margin: 0;
+  color: $neutral-dark;
+  background-color: $neutral-background;
+}
+.drop-item {
+  font-size: 1rem;
+  padding-left: 2vw;
+  border-bottom: .5px solid $neutral-med;
+  @include drop-padding();
+}
+.drop-item:hover {
+  background-color: $light-main;
+}
+.no-stroke {
+  -webkit-text-stroke-width: 0px;
+}
+.graph-square {
+  max-width: 40vw;
+  min-width: 40vw;
+}
+.graph-content {
+  display: flex;
+  justify-content:center;
+}
+.graph-options {
+  padding: 0;
+}
+.graph-options li {
+  font-size: 1rem;
+  display: inline;
+  // flex-direction: column;
+  // border-left: .5px solid $neutral-med;
+  padding: 1vh;
+}
+.gr-option:hover {
+  background-color: $tertiary-main;
+}
+.graph-container {
+  position: relative;
+  padding: 2% 2% 50% 5%;
+  height:0;
+  overflow: hidden;
+  width: 100%;
+}
+.actual-graph {
+  // margin: 2vh;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+
+.no-border {
+  border-left: 0px;
+}
+
+
+
+// MEDIA QUERIES:
+@media (min-width:640px) {
+  .canv {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+      "sidebar head"
+      "sidebar main"
+      "sidebar footer";
+  }
+}
+
+// CSS BUG TESTER
+// * {
+//  background: #000 !important;
+//  color: #0f0 !important;
+//  outline: solid #f00 1px !important;
+// }
+
+// _____GRAPH STYLEZ______
+.axis text {
+  font: 26pt sans-serif;
+  font-family: 'Zilla Slab', serif;
+}
+
+path {
+ fill: none;
+ stroke: steelblue;
+ stroke-width: 2px;
+}
